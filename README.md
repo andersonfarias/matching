@@ -14,7 +14,7 @@ The solution is made of the following parts:
 1. **Data Input**: this is the first part of the program where it's expected that the user enter three required arguments: the products file, the listings file and the result file to output. This arguments are then validated, and if everything goes fine, it goes to the next step.
 
 2. **Blocking**: The standard (naive) approach to find matches in n input objects is to compare each object with every other object. This requires lots of comparisons, basically a complete Cartesian product (OA × OB ) is examined. The resulting quadratic complexity of O(n2) results in infeasible execution times in particular for large input sets. Therefore, an initial step in the matching process called blocking is commonly applied to reduce the search space to a small subset of the most likely matching object pairs.
-
+ 
 Blocking approaches semantically partition the input data into blocks of similar objects and restrict object matching to objects of the same block.
 
 In this project, the products and listings are separated in blocks based on their manufacturer, so we don't need to compare every single product with every single listings, we just need to compare all the projects and all listings that refer to same manufacturer.
@@ -22,9 +22,10 @@ In this project, the products and listings are separated in blocks based on thei
 3. **Execution**: this is the third and last step where the computation happens. Since we have the data partitioned into different blocks, we can execute the computation of each block in parallel. Each parallel computation here is called a task.
 
 The task being executed here, for each block, is a string comparison between each product's name + model + familiy against each listing title. It's used a combination of the following algorithms to determine the similarity of each product with each listing, the best matching is selected (if above some pre-defined threshold):
-*[Levenshtein Distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
-*[QGram](https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process)
-*[Jaro Winkler Distance](https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance)
+
+* [Levenshtein Distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
+* [QGram](https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process)
+* [Jaro Winkler Distance](https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance)
 
 ## Executing Matching
 
