@@ -1,47 +1,111 @@
 package farias.anderson.challenges.sortable.matching.domain;
 
+/**
+ * Domain object that represents one listing for a product
+ * 
+ * @author Anderson Farias
+ */
 public class Listing {
 
+	/**
+	 * Title
+	 */
 	private String title;
 
+	/**
+	 * Manufacturer
+	 */
 	private String manufacturer;
 
+	/**
+	 * Currency
+	 */
 	private String currency;
 
+	/**
+	 * Price
+	 */
 	private String price;
 
+	/**
+	 * Returns the title
+	 * 
+	 * @return the title
+	 */
 	public String getTitle() {
 		return title;
 	}
 
+	/**
+	 * Sets the title
+	 * 
+	 * @param title
+	 *            the title
+	 */
 	public void setTitle( String title ) {
 		this.title = title;
 	}
 
+	/**
+	 * Return the manufacturer
+	 * 
+	 * @return the manufacturer
+	 */
 	public String getManufacturer() {
 		return manufacturer;
 	}
 
+	/**
+	 * Sets the manufacturer
+	 * 
+	 * @param manufacturer
+	 *            the manufacturer
+	 */
 	public void setManufacturer( String manufacturer ) {
 		this.manufacturer = manufacturer;
 	}
 
+	/**
+	 * Returns the currency
+	 * 
+	 * @return the currency
+	 */
 	public String getCurrency() {
 		return currency;
 	}
 
+	/**
+	 * Sets the currency
+	 * 
+	 * @param currency
+	 *            the currency
+	 */
 	public void setCurrency( String currency ) {
 		this.currency = currency;
 	}
 
+	/**
+	 * Gets the price
+	 * 
+	 * @return the price
+	 */
 	public String getPrice() {
 		return price;
 	}
 
+	/**
+	 * Sets the price
+	 * 
+	 * @param price
+	 *            the price
+	 */
 	public void setPrice( String price ) {
 		this.price = price;
 	}
 
+	/**
+	 * {@inheritDoc Object#hashCode()}
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -53,6 +117,9 @@ public class Listing {
 		return result;
 	}
 
+	/**
+	 * {@inheritDoc Object#equals(Object)}
+	 */
 	@Override
 	public boolean equals( Object obj ) {
 		if ( this == obj )
@@ -85,6 +152,9 @@ public class Listing {
 		return true;
 	}
 
+	/**
+	 * {@inheritDoc Object#toString()}
+	 */
 	@Override
 	public String toString() {
 		return "Listing [title=" + title + ", manufacturer=" + manufacturer + ", currency=" + currency + ", price=" + price + "]";

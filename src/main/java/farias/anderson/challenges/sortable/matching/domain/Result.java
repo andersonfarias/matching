@@ -3,38 +3,85 @@ package farias.anderson.challenges.sortable.matching.domain;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Domain object that represents the result of the challenge
+ * 
+ * @author Anderson Farias
+ */
 public class Result {
 
+	/**
+	 * Product's name
+	 */
 	private String productName;
 
+	/**
+	 * Product's listings
+	 */
 	private List<Listing> listings;
 
+	/**
+	 * Default constructor
+	 */
 	public Result() {
 
 	}
 
+	/**
+	 * Constructor
+	 * 
+	 * @param productName
+	 *            product's name
+	 * @param listings
+	 *            product's listings
+	 */
 	public Result( String productName, List<Listing> listings ) {
 		super();
 		this.productName = productName;
 		this.listings = listings;
 	}
 
+	/**
+	 * Returns the product's name
+	 * 
+	 * @return the product's name
+	 */
 	public String getProductName() {
 		return productName;
 	}
 
+	/**
+	 * Sets the the product's name
+	 * 
+	 * @param productName
+	 *            the product's name
+	 */
 	public void setProductName( String productName ) {
 		this.productName = productName;
 	}
 
+	/**
+	 * Returns the product's listings
+	 * 
+	 * @return the product's listings
+	 */
 	public List<Listing> getListings() {
 		return listings;
 	}
 
+	/**
+	 * Sets the product's listings
+	 * 
+	 * @param listings
+	 *            the product's listings
+	 */
 	public void setListings( List<Listing> listings ) {
 		this.listings = listings;
 	}
 
+	/**
+	 * {@inheritDoc Object#hashCode()}
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -44,6 +91,9 @@ public class Result {
 		return result;
 	}
 
+	/**
+	 * {@inheritDoc Object#equals(Object)}
+	 */
 	@Override
 	public boolean equals( Object obj ) {
 		if ( this == obj )
@@ -66,6 +116,9 @@ public class Result {
 		return true;
 	}
 
+	/**
+	 * {@inheritDoc Object#toString()}
+	 */
 	@Override
 	public String toString() {
 		return "Result [product=" + productName + ", listings=" + Arrays.deepToString( listings.toArray( new Listing[] {} ) ) + "]";

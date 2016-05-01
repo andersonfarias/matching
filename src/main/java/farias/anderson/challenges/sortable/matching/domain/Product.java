@@ -3,72 +3,170 @@ package farias.anderson.challenges.sortable.matching.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.annotations.SerializedName;
+
+/**
+ * Domain object that represents one product
+ * 
+ * @author Anderson Farias
+ */
 public class Product {
 
+	/**
+	 * Name
+	 */
 	private String productName;
 
+	/**
+	 * Manufacturer
+	 */
 	private String manufacturer;
 
+	/**
+	 * Model
+	 */
 	private String model;
 
+	/**
+	 * Family
+	 */
 	private String family;
 
+	/**
+	 * Announced Date
+	 */
+	@SerializedName( "announced-date" )
 	private String announcedDate;
 
+	/**
+	 * Listings
+	 */
 	private List<Listing> listings;
 
+	/**
+	 * Default constructor
+	 */
 	public Product() {
 		this.listings = new ArrayList<>();
 	}
 
+	/**
+	 * Returns the name
+	 * 
+	 * @return the name
+	 */
 	public String getProductName() {
 		return productName;
 	}
 
+	/**
+	 * Sets the name
+	 * 
+	 * @param productName
+	 *            the name
+	 */
 	public void setProductName( String productName ) {
 		this.productName = productName;
 	}
 
+	/**
+	 * Returns the manufacturer
+	 * 
+	 * @return the manufacturer
+	 */
 	public String getManufacturer() {
 		return manufacturer;
 	}
 
+	/**
+	 * Sets the manufacturer
+	 * 
+	 * @param manufacturer
+	 *            the manufacturer
+	 */
 	public void setManufacturer( String manufacturer ) {
 		this.manufacturer = manufacturer;
 	}
 
+	/**
+	 * Returns the model
+	 * 
+	 * @return the model
+	 */
 	public String getModel() {
 		return model;
 	}
 
+	/**
+	 * Sets the model
+	 * 
+	 * @param model
+	 *            the model
+	 */
 	public void setModel( String model ) {
 		this.model = model;
 	}
 
+	/**
+	 * Returns the family
+	 * 
+	 * @return the family
+	 */
 	public String getFamily() {
 		return family;
 	}
 
+	/**
+	 * Sets the family
+	 * 
+	 * @param family
+	 *            the family
+	 */
 	public void setFamily( String family ) {
 		this.family = family;
 	}
 
+	/**
+	 * Returns the announced date
+	 * 
+	 * @return the announced date
+	 */
 	public String getAnnouncedDate() {
 		return announcedDate;
 	}
 
+	/**
+	 * Sets the announced date
+	 * 
+	 * @param announcedDate
+	 *            the announced date
+	 */
 	public void setAnnouncedDate( String announcedDate ) {
 		this.announcedDate = announcedDate;
 	}
 
+	/**
+	 * Returns the listings
+	 * 
+	 * @return the listings
+	 */
 	public List<Listing> getListings() {
 		return listings;
 	}
 
+	/**
+	 * Sets the listings
+	 * 
+	 * @param listings
+	 *            the listings
+	 */
 	public void setListings( List<Listing> listings ) {
 		this.listings = listings;
 	}
 
+	/**
+	 * {@inheritDoc Object#hashCode()}
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -82,6 +180,9 @@ public class Product {
 		return result;
 	}
 
+	/**
+	 * {@inheritDoc Object#equals(Object)}
+	 */
 	@Override
 	public boolean equals( Object obj ) {
 		if ( this == obj )
@@ -124,6 +225,9 @@ public class Product {
 		return true;
 	}
 
+	/**
+	 * {@inheritDoc Object#toString()}
+	 */
 	@Override
 	public String toString() {
 		return "Product [name=" + productName + ", manufacturer=" + manufacturer + ", model=" + model + ", family=" + family + ", announcedDate=" + announcedDate + "]";
